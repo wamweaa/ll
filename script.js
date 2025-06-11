@@ -1,6 +1,4 @@
-                                                                                       /*
-  Johan Karlsson (DonKarlssonSan)
-*/
+
 function Particle() {
     this.x = random([0, w]);
     this.y = random([0, h]);
