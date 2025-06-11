@@ -69,7 +69,7 @@ function Particle() {
     var tSize = 150;
     textSize(tSize);
     var tWidth = textWidth(message);
-    text(message, w / 2 - tWidth / 2, h / 2 + tSize / 2);
+    
     var image = get(0, 0, w, h);
     image.loadPixels();
     px = image.pixels;
