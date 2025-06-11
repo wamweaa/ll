@@ -62,7 +62,7 @@ function Particle() {
   
   function initImage() {
     var message = "Hey Rachel,You’re amazing";
-    var tSize = 150;
+    var tSize = 100;
     textSize(tSize);
     var tWidth = textWidth(message);
     text(message, w / 2 - tWidth / 2, h / 2 + tSize / 2);
