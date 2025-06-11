@@ -1,4 +1,4 @@
-/*
+                                                                          /*
   Johan Karlsson (DonKarlssonSan)
 */
 function Particle() {
@@ -62,25 +62,20 @@ function Particle() {
     }
   }
   
-function initImage() {
-  background(255); // Clear background before rendering text
-  textAlign(LEFT, TOP); // Align text top-left for wrapping
-  let padding = 40;
-  let message = "Hey Rachel, You’re truly one of the most amazing people I know — everything you do carries a spark of brilliance and heart. I care deeply about you and all the things you set your mind to. I’m cheering for you always and wishing you nothing but the very best in every little and big adventure ahead. ❤️✨ And remember, as Captain Jack Sparrow would say: The problem is not the problem. The problem is your attitude about the problem. So keep that pirate spirit, and sail boldly — you’ve got this. 🏴‍☠️💫";
-
-  let maxTextWidth = w - padding * 2;
-  let tSize = min(24, w / 40); // Auto-adjust text size based on width
-  textSize(tSize);
-  textLeading(tSize * 1.4); // Line spacing
-  fill(0); // Set text color
-
-  text(message, padding, padding, maxTextWidth); // Auto-wrap with max width
-
-  let image = get(0, 0, w, h);
-  image.loadPixels();
-  px = image.pixels;
-}
-
+  function initImage() {
+    textAlign(LEFT, TOP); 
+    let padding = 40;
+    let padding = 40;
+    var message = "Hey Rachel,You’re truly one of the most amazing people I know — everything you do carries a spark of brilliance and heart. I care deeply about you and all the things you set your mind to. I’m cheering for you always and wishing you nothing but the very best in every little and big adventure ahead. ❤️✨And remember, as Captain Jack Sparrow would say:The problem is not the problem. The problem is your attitude about the problem.So keep that pirate spirit, and sail boldly — you’ve got this. 🏴‍☠️💫";
+    var tSize = 150;
+    textSize(tSize);
+    var tWidth = textWidth(message);
+    text(message, w / 2 - tWidth / 2, h / 2 + tSize / 2);
+    var image = get(0, 0, w, h);
+    image.loadPixels();
+    px = image.pixels;
+    background(255);
+  }
   
   function reset() {
     initParticles();
