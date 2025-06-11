@@ -1,4 +1,4 @@
-                                                                                       /*
+                                                                                     /*
   Johan Karlsson (DonKarlssonSan)
 */
 function Particle() {
@@ -62,30 +62,20 @@ function Particle() {
     }
   }
   
- function initImage() {
-  background(255); // Clear the background to white
-  textAlign(LEFT, TOP); // Align text to top-left for better layout
-
-  let message = "Hey Rachel,\n\nYou’re truly one of the most amazing people I know — everything you do carries a spark of brilliance and heart. I care deeply about you and all the things you set your mind to. I’m cheering for you always and wishing you nothing but the very best in every little and big adventure ahead. ❤️✨\n\nAnd remember, as Captain Jack Sparrow would say:\n\n\"The problem is not the problem. The problem is your attitude about the problem.\"\n\nSo keep that pirate spirit, and sail boldly — you’ve got this. 🏴‍☠️💫";
-
-  let padding = 40;
-  let maxTextWidth = w - padding * 2;
-  let fontSize = min(24, w / 50); // Responsive font size
-  textSize(fontSize);
-  textLeading(fontSize * 1.5); // Good line spacing
-  fill(0); // Text color
-
-  text(message, padding, padding, maxTextWidth); // Draw text wrapped within canvas
-
-  // Capture the current text image for animation logic
-  let image = get(0, 0, w, h);
-  image.loadPixels();
-  px = image.pixels;
-
-  // Optionally, re-clear background if you want only particles visible
-  // background(255); // Comment out if you want text to remain visible
-}
-
+  function initImage() {
+    var message = "Hey Rachel,You’re truly one of the most amazing people I know — everything you do carries a spark of brilliance and heart. I care deeply about you and all the things you set your mind to. I’m cheering for you always and wishing you nothing but the very best in every little and big adventure ahead. ❤️✨And remember, as Captain Jack Sparrow would say:The problem is not the problem. The problem is your attitude about the problem.So keep that pirate spirit, and sail boldly — you’ve got this. 🏴‍☠️💫";
+    let fontSize = min(24, w / 50); // Responsive font size
+    
+    var tSize = 150;
+    textSize(fontSize);
+    textLeading(fontSize * 1.5); 
+    var tWidth = textWidth(message);
+    text(message, w / 2 - tWidth / 2, h / 2 + tSize / 2);
+    var image = get(0, 0, w, h);
+    image.loadPixels();
+    px = image.pixels;
+    background(255);
+  }
   
   function reset() {
     initParticles();
